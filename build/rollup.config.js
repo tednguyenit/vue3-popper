@@ -55,9 +55,13 @@ const baseConfig = {
           generateScopedName: "[local]___[hash:base64:5]",
         },
         include: /&module=.*\.css$/,
+        extract: "popper.css",
       }),
       // Process all `<style>` blocks except `<style module>`.
-      PostCSS({ include: /(?<!&module=.*)\.css$/ }),
+      PostCSS({
+        include: /(?<!&module=.*)\.css$/,
+        extract: "popper.css",
+      }),
       commonjs(),
     ],
     babel: {
